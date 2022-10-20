@@ -12,11 +12,12 @@
                         <div class="flex justify-center items-center flex-col">
 
 
-                                    <h2 class="uppercase text-lg text-center font-extrabold">Ajouter un nouveau stagiaire</h2>
+                                    <h2 class="uppercase text-lg text-center font-extrabold">Modifier un stage</h2>
 
                                 <div class="flex justify-center items-center">
-                                <form method="POST" action="{{route('stagiaires.store')}}" enctype="multipart/form-data" style="background-color:#AED6F1; padding:6px; border-radius: 5px;">
+                                <form method="POST" action="{{route('stages.update', ['stage' => $stage->id])}}" enctype="multipart/form-data" style="background-color:#AED6F1; padding:6px; border-radius: 5px;">
                             @csrf
+                            @method('PUT')
 
 
                             <!-- <fieldset class="border border-solid border-red-600 p-3 text-blue-700 mt-2"> -->
@@ -25,48 +26,56 @@
                             <div class="flex justify-between">
 
                                         <div>
-                                                    <x-label for="nom" :value="__('Nom')" />
-                                                    <x-input name="stagiaire[nom]" class="block mt-1 w-full" type="text" required autofocus/>
+                                                    <x-label for="dateDebut" :value="__('Date Debut')" />
+                                                    <x-input name="dateDebut" class="block mt-1 w-full" type="date" value="{{$stage->dateDebut}}" autofocus/>
                                         </div>
                                         <div>
-                                                    <x-label for="prenom" :value="__('Prénom')" />
-                                                    <x-input id="prenom" @keyup.tab="setCurrentDate()" name="stagiaire[prenom]" class="block mt-1 w-full" type="text" required/>
+                                                    <x-label for="dateFin" :value="__('Date Fin')" />
+                                                    <x-input name="dateFin" class="block mt-1 w-full" type="date" value="{{$stage->dateFin}}"/>
                                         </div>
                                         <div>
-                                                    <x-label for="email" :value="__('Email')" />
-                                                    <x-input id="email" name="stagiaire[email]" class="block mt-1 w-full" type="email"/>
+                                                    <x-label for="subject" :value="__('Sujet')" />
+                                                    <x-textarea id="subject" name="subject" class="block mt-1 w-full" value="{{$stage->subject}}"/>
                                         </div>
-                                        <div>
-                                                    <x-label for="telephone" :value="__('Téléphone')" />
-                                                    <x-input id="telephone" name="stagiaire[phone]" class="block mt-1 w-full" type="text"/>
-                                        </div>
+
                                 </div>
                                 <div class="flex justify-between">
                                         <div>
-                                                    <x-label for="cin" :value="__('CIN')" />
-                                                    <x-input id="cin" name="stagiaire[cin]" class="block mt-1 w-full" type="text"/>
+                                                    <x-label for="attestationReferences" :value="__('Références Attestation')" />
+                                                    <x-input id="attestationReferences" name="attestationReferences" class="block mt-1 w-full" type="text" value="{{$stage->attestationReferences}}"/>
                                         </div>
 
                                         <div>
-                                            <x-label for="gender" :value="__('Mr/Mme/Mlle')" class="block w-full"/>
-                                                <select name="stagiaire[gender]" class="block mt-1 rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"  required>
+                                            <x-label for="attestationStatut" :value="__('Statut Attestation')" class="block w-full"/>
+                                                <select name="attestationStatut" class="block mt-1 rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                                                             <option value="" disabled>Choisir...</option>
-                                                            <option value="Mr">Mr</option>
-                                                            <option value="Mlle">Mlle</option>
-                                                            <option value="Mme">Mme</option>
+                                                            <option value="">...</option>
+                                                            <option @if ($stage->attestationStatut == "A établir")
+                                                                selected
+                                                            @endif value="A établir">A établir</option>
+                                                            <option @if ($stage->attestationStatut == "Etablie")
+                                                                selected
+                                                            @endif value="Etablie">Etablie</option>
+                                                            <option @if ($stage->attestationStatut == "Délivrée")
+                                                                selected
+                                                            @endif value="Délivrée">Délivrée</option>
                                                 </select>
                                         </div>
                                         <div>
-                                                    <x-label for="institut" :value="__('Institut')" />
-                                                    <x-input pattern="[A-Z]*" id="institut" name="stagiaire[institut]" class="block mt-1 w-full" type="text"/>
+                                                            <x-label for="stagiaire_id" :value="__('Stagiaire')" />
+                                                            <select name="stagiaire_id" class="block mt-1 rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"  required>
+                                                                        <option value="" disabled selected>Choisir...</option>
+                                                                        @foreach ($stagiaires as $stagiaire )
+                                                                            <option value="{{$stagiaire->id}}" @if ($stage->stagiaire_id == $stagiaire->id) selected @endif> {{$stagiaire->nom}} {{$stagiaire->prenom}}</option>
+                                                                        @endforeach
+
+
+                                                            </select>
                                         </div>
-                                        <div>
-                                                    <x-label for="ville" :value="__('Ville')" />
-                                                    <x-input id="ville" name="stagiaire[ville]" class="block mt-1 w-full" type="text"/>
-                                        </div>
+
                                         <div class="">
                                             <x-button class="mt-7">
-                                                {{ __('Ajouter') }}
+                                                {{ __('Modifier') }}
                                             </x-button>
                                         </div>
                                 </div>

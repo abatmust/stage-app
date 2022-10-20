@@ -33,7 +33,9 @@ class StagiaireController extends Controller
         return view('stagiaires.create');
      }
      public function store(Request $request){
-        dd($request);
 
+        $stagiaire = Stagiaire::create($request->stagiaire);
+
+        return redirect()->route('stagiaires.index')->with('info', 'Ajout réuissi');
      }
 }

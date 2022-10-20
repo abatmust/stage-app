@@ -55,7 +55,7 @@
 
                         </form>
 
-                        {{$demande}}
+
                     </div>
                     <ul>
                     </ul>

@@ -18,12 +18,6 @@ class DemandeController extends Controller
     //
     public function index(Request $request){
         $demandes = Demande::orderBy('created_at', 'DESC')->with(['stagiaires', 'user'])->paginate(5);
-        //$demandes = $demandes;
-        //$demandes = $demandes->sortByDesc("created_at")->paginate(5);
-
-
-        //$demandes = Demande::sortByDesc("created_at")->with('stagiaires')->paginate(5);
-        //dd($demandes);
        return view('demandes.index', ['demandes' => $demandes]);
     }
     public function create(Request $request){

@@ -7,6 +7,9 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200 flex flex-col justify-center items-center">
+                    @if (Session::has('info'))
+                        {{Session::get('info')}}
+                    @endif
                 <div>
                     <h2 class="uppercase text-lg text-center ml-3 font-extrabold">liste des stagiaires</h2>
                 </div>
@@ -51,11 +54,18 @@
 
                             </th>
                             <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+
+
                                     <ul class="list-disc marker:text-blue-500">
-
-
+                                    @forelse ($stagiaire->demandes as $demande)
+                                        <li>
+                                            {{$demande->num_saf}} du
+                                            {!! date('d/m/Y', strtotime($demande->date_saf)) !!}
+                                        </li>
+                                    @empty
+                                        <span>Aucune demande attachée</span>
+                                    @endforelse
                                     </ul>
-
 
 
                             </th>

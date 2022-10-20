@@ -11,7 +11,7 @@
                         <x-auth-validation-errors class="mb-4" :errors="$errors" />
                         <div class="flex justify-center items-center">
 
-                                <h2 class="uppercase text-lg text-center ml-3">Modifier les données d'un stagiaire</h2>
+                                <h2 class="uppercase text-lg text-center font-extrabold text-green-600">Modifier les données d'un stagiaire</h2>
 
                         </div>
                         <div class="m-auto">
@@ -49,7 +49,7 @@
 
                                         <div>
                                             <x-label for="gender" :value="__('Mr/Mme/Mlle')" class="block w-full"/>
-                                                <select name="stagiaire[gender]" class="block mt-1 rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"  required>
+                                                <select name="stagiaire[gender_situation]" class="block mt-1 rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"  required>
                                                             <option value="" disabled>Choisir...</option>
                                                             <option @if ($stagiaire->gender_situation == "Mr")
                                                                 selected

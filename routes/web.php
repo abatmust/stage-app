@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DemandeController;
+use App\Http\Controllers\StageController;
 use App\Http\Controllers\StagiaireController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,6 +23,16 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    //stage
+    Route::get('/stages.create', [StageController::class, 'create'])->name('stages.create');
+    Route::post('/stages.store', [StageController::class, 'store'])->name('stages.store');
+    Route::get('/stages.index', [StageController::class, 'index'])->name('stages.index');
+    Route::delete(('deleteStage/{stage}'),[StageController::class, 'deleteStage'])->name('deleteStage');
+    Route::get('/stages.edit/{stage}', [StageController::class, 'edit'])->name('stages.edit');
+    Route::put('/stages.update/{stage}', [StageController::class, 'update'])->name('stages.update');
+    Route::get('/stages.attestation/{stage}', [StageController::class, 'getAttestation'])->name('stages.attestation');
+
+
     //stagiaires
     Route::get('/stagiaires.index', [StagiaireController::class, 'index'])->name('stagiaires.index');
     Route::get('/stagiaires.edit/{stagiaire}', [StagiaireController::class, 'edit'])->name('stagiaires.edit');
