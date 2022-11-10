@@ -26,7 +26,7 @@
                     Stagiaire
                     </th>
                     <th scope="col" class="px-6 py-4">
-                    Sujet
+                    Sujet et affectation
                     </th>
                     <th scope="col" class="px-6 py-4">
                     Attestation de stage
@@ -58,6 +58,11 @@
                             </th>
                             <td class="px-6 py-4 text-ellipsis overflow-hidden">
                             {{$stage->subject}}
+                            @if($stage->affectation)
+                            <span class="inline-flex items-center justify-center px-2 py-1 mr-2 text-xs font-bold leading-none text-blue-900 bg-orange-500 rounded-full">
+                                {{$stage->affectation}}
+                            </span>
+                            @endif
                             </td>
                             <td class="px-6 py-4">
 

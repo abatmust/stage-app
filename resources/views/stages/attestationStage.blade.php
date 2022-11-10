@@ -21,12 +21,12 @@
             <header class="flex justify-center">
                 <img class="hidden print:block" src="{{ asset('img/pgHeader.png') }}" alt="Entête de la page">
             </header>
-            <main class="mb-auto h-10">
+            <main class="mb-auto h-10 screen:mx-auto">
                 <br>
                 <div class="flex">
-                    <div class="text-center basis-2/5">N°: ............... ORH/SAF/BFP</div>
+                    <div class="text-center basis-2/5">N°: ..................... ORH/SAF/BFP</div>
                     <div class="text-center basis-1/5"></div>
-                    <div class="text-left basis-2/5">Marrakech, le .................</div>
+                    <div class="text-left basis-2/5">Marrakech, le ...................................</div>
                 </div>
                 <br>
                 <br>
@@ -35,7 +35,7 @@
                 </div>
                 <br>
                 <br>
-                <p class="text-lg text-justify">
+                <p class="text-lg text-justify screen:text-center">
                     Le Directeur de l'Office Régional de Mise en Valeur Agricole du Haouz, atteste par la présente que:
                 </p>
                 <br>

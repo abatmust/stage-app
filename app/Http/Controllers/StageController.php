@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Affectation;
 use App\Models\Demande;
 use App\Models\Stage;
 use App\Models\Stagiaire;
@@ -11,19 +12,22 @@ use Illuminate\Support\Facades\Validator;
 class StageController extends Controller
 {
     //
-    public function create(Request $request){
+    public function create(Request $request, Affectation $affectation){
         $stagiaires = Stagiaire::orderBy('nom')->get();
 
 
-        return view('stages.create', [ 'stagiaires' => $stagiaires]);
+        return view('stages.create', [ 'stagiaires' => $stagiaires, 'entities' => $affectation->getEntities()]);
      }
      public function store(Request $request){
+
+
         $validator = Validator::make($request->all(), [
             'dateDebut' => 'date|nullable',
             'dateFin' => 'date|nullable',
             'subject' => 'string|nullable',
             'attestationStatut' => 'string|nullable',
-            'attestationReferences' => 'string|nullable'
+            'attestationReferences' => 'string|nullable',
+            'affectation' => 'string|nullable'
 
 
 
@@ -43,9 +47,9 @@ class StageController extends Controller
 
         return redirect()->back();
      }
-     public function edit(Request $request, Stage $stage){
+     public function edit(Request $request, Stage $stage, Affectation $affectation){
         $stagiaires = Stagiaire::orderBy('nom')->get();
-        return view('stages.edit', ['stage' => $stage, 'stagiaires' => $stagiaires]);
+        return view('stages.edit', ['stage' => $stage, 'stagiaires' => $stagiaires, 'entities' => $affectation->getEntities()]);
      }
      public function update(Request $request, Stage $stage){
 

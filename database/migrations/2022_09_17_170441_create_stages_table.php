@@ -20,6 +20,7 @@ class CreateStagesTable extends Migration
             $table->text('subject');
             $table->string('attestationStatut')->nullable();
             $table->string('attestationReferences')->nullable();
+            $table->string('affectation')->nullable();
             $table->foreignId('stagiaire_id')
                         ->constrained()
                         ->onUpdate('cascade')

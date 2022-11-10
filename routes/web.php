@@ -3,6 +3,7 @@
 use App\Http\Controllers\DemandeController;
 use App\Http\Controllers\StageController;
 use App\Http\Controllers\StagiaireController;
+use App\Affectation;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,6 +32,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/stages.edit/{stage}', [StageController::class, 'edit'])->name('stages.edit');
     Route::put('/stages.update/{stage}', [StageController::class, 'update'])->name('stages.update');
     Route::get('/stages.attestation/{stage}', [StageController::class, 'getAttestation'])->name('stages.attestation');
+
+    // Route::get('/xxx', function(Affectation $service){
+    //     $myvar = $service->getEntities();
+    //     dump("ok");
+    //     dd($myvar);
+    // });
 
 
     //stagiaires

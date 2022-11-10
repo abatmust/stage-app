@@ -66,7 +66,25 @@
                                                             </select>
                                         </div>
 
-                                        <div class="">
+
+                                </div>
+                                <div class="flex justify-between">
+                                    <div class="">
+                                    <x-label for="affectation" :value="__('Affectation')" class="block w-full"/>
+                                            <!-- <input list="affectations" id="affectation" class="block mt-1 rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"> -->
+                                            <x-input list="affectations" id="affectation" name="affectation" class="block mt-1 w-full"/>
+                                            <datalist id="affectations" >
+                                                @foreach ($entities as $key => $entity)
+                                                <option value="{{$key}}" >{{$entity}}</option>
+                                                @endforeach
+
+
+                                                </datalist>
+                                    </div>
+
+
+
+                                <div class="">
                                             <x-button class="mt-7">
                                                 {{ __('Ajouter') }}
                                             </x-button>
