@@ -41,9 +41,9 @@
                     <div class="">
 
                             <template x-for="stage in selStages">
-                                <div class="shadow-md sm:rounded-lg p-4 bg-lime-400 mt-6 mb-6 border-8 border-slate-900 text-xl" style="width: 500px">
+                                <div class="shadow-md sm:rounded-lg p-4 bg-lime-400 mt-6 mb-6 border-8 border-slate-900 text-xl" style="width: 600px">
                                     <div class="flex justify-between">
-                                        <div class="underline-offset-8">
+                                        <div class="underline">
                                             Stagiaire:
                                         </div>
                                         <div class="text-center grow font-black">
@@ -54,7 +54,7 @@
 
                                     </div>
                                     <div class="flex justify-between">
-                                        <div class="underline-offset-8">
+                                        <div class="underline">
                                             Période:
                                         </div>
                                         <div class="text-center grow">
@@ -67,7 +67,7 @@
 
                                     </div>
                                     <div class="flex justify-between">
-                                        <div class="underline-offset-8">
+                                        <div class="underline">
                                             Affectation:
                                         </div>
                                         <div class="text-center grow">
@@ -78,7 +78,7 @@
 
                                     </div>
                                     <div class="flex justify-between">
-                                        <div class="underline-offset-8">
+                                        <div class="underline">
                                             Objet:
                                         </div>
                                         <div class="text-center grow">
