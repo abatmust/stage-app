@@ -51,7 +51,10 @@
                             {!! date('d/m/Y', strtotime($stage->dateFin)) !!}
                             </th>
                             <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+                            @if ($stage->stagiaire)
                                     {{$stage->stagiaire->nom}} {{$stage->stagiaire->prenom}}
+                                @endif
+
 
 
 
@@ -75,6 +78,11 @@
                                           </svg>
 
                                     </a>
+                                @endif
+                                @if($stage->attestationReferences)
+                                    <span class="inline-flex items-center justify-center px-2 py-1 mr-2 text-xs font-bold leading-none text-yellow-900 bg-blue-300 rounded-full">
+                                        {{$stage->attestationReferences}}
+                                    </span>
                                 @endif
                             </td>
                             <td class="px-6 py-4">

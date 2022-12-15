@@ -1,9 +1,10 @@
 <?php
 
 use App\Http\Controllers\DemandeController;
+use App\Http\Controllers\DiversController;
 use App\Http\Controllers\StageController;
 use App\Http\Controllers\StagiaireController;
-use App\Affectation;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,7 +39,9 @@ Route::middleware('auth')->group(function () {
     //     dump("ok");
     //     dd($myvar);
     // });
+    //Divers
 
+    Route::get('/divers.etiquette', [DiversController::class, 'etiquette'])->name('divers.etiquette');
 
     //stagiaires
     Route::get('/stagiaires.index', [StagiaireController::class, 'index'])->name('stagiaires.index');
@@ -47,7 +50,7 @@ Route::middleware('auth')->group(function () {
     Route::delete(('deleteStagiaire/{stagiaire}'),[StagiaireController::class, 'deleteStagiaire'])->name('deleteStagiaire');
     Route::get('/stagiaires.create', [StagiaireController::class, 'create'])->name('stagiaires.create');
     Route::post('/stagiaires.store', [StagiaireController::class, 'store'])->name('stagiaires.store');
-
+    Route::get('/stagiaires.search', [StagiaireController::class, 'search'])->name('stagiaires.search');
     //demandes
     Route::get('/test', [DemandeController::class, 'test'])->name('test');
     Route::get('/requests.index', [DemandeController::class, 'index'])->name('requests.index');

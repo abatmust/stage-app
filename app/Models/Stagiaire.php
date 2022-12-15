@@ -35,4 +35,9 @@ class Stagiaire extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+    public function stages()
+    {
+
+        return $this->hasMany(Stage::class);
+    }
 }

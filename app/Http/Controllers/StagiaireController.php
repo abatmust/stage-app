@@ -20,7 +20,9 @@ class StagiaireController extends Controller
 
         $stagiaire->update($request->stagiaire);
         $stagiaires = Stagiaire::orderBy('created_at', 'DESC')->with(['demandes', 'creater'])->paginate(5);
-        return view('stagiaires.index', ['stagiaires' => $stagiaires]);
+        return redirect("stagiaires.index");
+
+        // return view('stagiaires.index', ['stagiaires' => $stagiaires]);
 
      }
      public function deleteStagiaire(Stagiaire $stagiaire){
@@ -37,5 +39,16 @@ class StagiaireController extends Controller
         $stagiaire = Stagiaire::create($request->stagiaire);
 
         return redirect()->route('stagiaires.index')->with('info', 'Ajout réuissi');
+     }
+     public function search(Request $request){
+        $stagiaires = Stagiaire::orderBy('nom')->with(['demandes', 'creater'])->get();
+        return view('stagiaires.search', ['stagiaires' => $stagiaires]);
+     }
+     public function getStagiaire(Request $request, Stagiaire $stagiaire){
+        $stagiaire->load('demandes');
+        $stagiaire->load('stages');
+        return $stagiaire;
+
+
      }
 }

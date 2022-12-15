@@ -39,6 +39,7 @@ class StageController extends Controller
      }
      public function index(Request $request){
         $stages = Stage::orderBy('created_at', 'DESC')->with('stagiaire')->paginate(5);
+
        return view('stages.index', ['stages' => $stages]);
     }
     public function deleteStage(Stage $stage){
