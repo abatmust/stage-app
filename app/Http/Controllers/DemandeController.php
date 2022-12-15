@@ -23,6 +23,9 @@ class DemandeController extends Controller
     public function create(Request $request){
        return view('demandes.create');
     }
+    public function createwithoutstagiaire(Request $request){
+        return view('demandes.createwithoutstagiaire');
+     }
     public function store(Request $request){
 
         $validator = Validator::make($request->all(), [
@@ -54,6 +57,41 @@ class DemandeController extends Controller
 
             ]);
         }
+        //////////////////////////////////////////////
+        if($request->hasFile('PJ')){
+
+             $myDocumentId = Str::uuid();
+             $file = $request->file('PJ');
+
+
+             $path = "demandes/". $myDocumentId . ".pdf";
+
+
+             $result = Storage::disk('public')->put($path, file_get_contents($request->PJ));
+             $demande->pj =  $myDocumentId;
+             $demande->save();
+         }
+
+
+        //////////////////////////////////////////////
+        return redirect()->route('requests.index');
+
+
+    }
+    public function storewithoutstagiaire(Request $request){
+
+        $validator = Validator::make($request->all(), [
+
+            'demande.num_saf' => 'required',
+            'demande.date_saf' => 'required|date',
+            'PJ' =>'nullable|mimes:pdf|max:2048'
+
+        ]);
+
+
+        $demande = Demande::create($request->demande);
+
+
         //////////////////////////////////////////////
         if($request->hasFile('PJ')){
 

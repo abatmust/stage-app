@@ -55,7 +55,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/test', [DemandeController::class, 'test'])->name('test');
     Route::get('/requests.index', [DemandeController::class, 'index'])->name('requests.index');
     Route::get('/requests.create', [DemandeController::class, 'create'])->name('requests.create');
+    Route::get('/requests.createwithoutstagiaire', [DemandeController::class, 'createwithoutstagiaire'])->name('requests.createwithoutstagiaire');
     Route::post('/requests.store', [DemandeController::class, 'store'])->name('requests.store');
+    Route::post('/requests.storewithoutstagiaire', [DemandeController::class, 'storewithoutstagiaire'])->name('requests.storewithoutstagiaire');
     Route::put('/requests.update/{demande}', [DemandeController::class, 'update'])->name('requests.update');
     Route::get('/requests.edit/{demande}', [DemandeController::class, 'edit'])->name('requests.edit');
     Route::get('/requests.stagiaires/{demande}', [DemandeController::class, 'stagiairedemande'])->name('requests.stagiaires');
