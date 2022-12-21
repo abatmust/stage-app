@@ -48,51 +48,194 @@
                         </div>
 
 
-                        <div class="grid grid-cols-4 gap-4 text-red-500">
-                            <div class="border-gray-700 border-2 text-center border-collapse">nom et prénom</div>
-                            <div class="border-gray-700 border-2 text-center border-collapse">cin</div>
-                            <div class="border-gray-700 border-2 text-center border-collapse">civilité</div>
-                            <div class="border-gray-700 border-2 text-center border-collapse">institut</div>
-                        <div class="border-gray-500 border-2 text-center border-collapse">
-                            <span x-text="mystagiaire.gender_situation"></span> <span class="" x-text="mystagiaire.nom + ' ' + mystagiaire.prenom"></span>
-                        </div>
-                        <div class="border-gray-500 border-2 text-center border-collapse" x-text="mystagiaire.cin"></div>
-                        <div class="border-gray-500 border-2 text-center border-collapse" x-text="mystagiaire.gender_situation">03</div>
-                        <div class="border-gray-500 border-2 text-center border-collapse" x-text="mystagiaire.institut">04</div>
 
-                        </div>
+                        <table class="min-w-full text-center  bg-cyan-700">
+                            <thead class="border-b">
+
+                                <tr>
+                                <th scope="col" class="text-sm font-medium text-gray-50 px-6 py-2">
+                                    Civilité
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-gray-50 px-6 py-2">
+                                    Nom et Prénom
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-gray-50 px-6 py-2">
+                                    Téléphone
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-gray-50 px-6 py-2">
+                                    Email
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-gray-50 px-6 py-2">
+                                    CIN
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-gray-50 px-6 py-2">
+                                    Institut
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-gray-50 px-6 py-2">
+                                    Ville
+                                </th>
+                                </tr>
+                            </thead class="border-b">
+                            <tbody x-show="mystagiaire.id">
+
+                                <tr class="bg-cyan-400 border-b">
+                                <td class="px-6 py-2 whitespace-nowrap text-sm font-medium text-gray-900" x-text="mystagiaire.gender_situation"></td>
+                                <td class="px-6 py-2 whitespace-nowrap text-sm font-medium text-gray-900" x-text="mystagiaire.nom + ' ' + mystagiaire.prenom"></td>
+
+                                <td class="text-sm text-cyan-900 font-light px-6 py-2 whitespace-nowrap" x-text="mystagiaire.phone">
+
+                                </td>
+                                <td class="text-sm text-cyan-900 font-light px-6 py-2 whitespace-nowrap" x-text="mystagiaire.email">
+
+                                </td>
+                                <td class="text-sm text-cyan-900 font-light px-6 py-2 whitespace-nowrap" x-text="mystagiaire.cin">
+
+                                </td>
+                                <td class="text-sm text-cyan-900 font-light px-6 py-2 whitespace-nowrap" x-text="mystagiaire.institut">
+                                <td class="text-sm text-cyan-900 font-light px-6 py-2 whitespace-nowrap" x-text="mystagiaire.ville">
+
+                                </td>
+                                </tr class="bg-white border-b">
+
+
+                            </tbody>
+                        </table>
                     </div>
                     <div class="relative overflow-x-auto shadow-md sm:rounded-lg p-4  bg-lime-500 mt-2">
                         <div class="flex justify-between">
                             <h1 class=" text-cyan-800 uppercase">les stages effectués</h1>
-                            <div x-show="mystagiaire.id" class="">
-                                <a x-cloak x-bind:href="'stagiaires.edit' +'/' + mystagiaire.id" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <title>Edit</title>
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                    </svg>
 
-                                </a>
-                            </div>
 
 
 
                         </div>
 
+                        <table class="min-w-full text-center  bg-cyan-700">
+                            <thead class="border-b">
 
-                        <div class="grid grid-cols-4 gap-4 text-red-500">
-                            <div class="border-gray-700 border-2 text-center border-collapse">nom et prénom</div>
-                            <div class="border-gray-700 border-2 text-center border-collapse">cin</div>
-                            <div class="border-gray-700 border-2 text-center border-collapse">civilité</div>
-                            <div class="border-gray-700 border-2 text-center border-collapse">institut</div>
-                        <div class="border-gray-500 border-2 text-center border-collapse">
-                            <span x-text="mystagiaire.gender_situation"></span> <span class="" x-text="mystagiaire.nom + ' ' + mystagiaire.prenom"></span>
-                        </div>
-                        <div class="border-gray-500 border-2 text-center border-collapse" x-text="mystagiaire.cin"></div>
-                        <div class="border-gray-500 border-2 text-center border-collapse" x-text="mystagiaire.gender_situation">03</div>
-                        <div class="border-gray-500 border-2 text-center border-collapse" x-text="mystagiaire.institut">04</div>
+                                <tr>
+                                <th scope="col" class="text-sm font-medium text-gray-50 px-6 py-2">
+                                    #
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-gray-50 px-6 py-2">
+                                    Date Début
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-gray-50 px-6 py-2">
+                                    Date Fin
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-gray-50 px-6 py-2">
+                                    Objet
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-gray-50 px-6 py-2">
+                                    Attestation
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-gray-50 px-6 py-2">
+                                    Affectation
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-gray-50 px-6 py-2">
+                                    Opérations
+                                </th>
+                                </tr>
+                            </thead class="border-b">
+                            <tbody>
+                            <template x-for="(stage, index) in mystagiaire.stages">
+                                <tr class="bg-cyan-400 border-b">
+                                <td class="px-6 py-2 whitespace-nowrap text-sm font-medium text-gray-900" x-text="index + 1"></td>
+                                <td class="text-sm text-cyan-900 font-light px-6 py-2 whitespace-nowrap" x-text="stage.dateDebut">
+
+                                </td>
+                                <td class="text-sm text-cyan-900 font-light px-6 py-2 whitespace-nowrap" x-text="stage.dateFin">
+
+                                </td>
+                                <td class="text-sm text-cyan-900 font-light px-6 py-2 whitespace-nowrap" x-text="stage.subject">
+
+                                </td>
+                                <td class="text-sm text-cyan-900 font-light px-6 py-2 whitespace-nowrap" x-text="stage.attestationStatut">
+
+                                </td>
+                                <td class="text-sm text-cyan-900 font-light px-6 py-2 whitespace-nowrap" x-text="stage.affectation">
+
+                                </td>
+                                <td class="text-sm text-cyan-900 font-light px-6 py-2 whitespace-nowrap">
+                                    <a x-cloak x-bind:href="'stages.edit' +'/' + stage.id" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                            <title>Edit</title>
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                        </svg>
+
+                                    </a>
+                                </td>
+                                </tr class="bg-white border-b">
+                            </template>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <div class="relative overflow-x-auto shadow-md sm:rounded-lg p-4  bg-lime-500 mt-2">
+                        <div class="flex justify-between">
+                            <h1 class=" text-cyan-800 uppercase">les demandes de stage</h1>
+
+
+
 
                         </div>
+
+                        <table class="min-w-full text-center  bg-cyan-700">
+                            <thead class="border-b">
+
+                                <tr>
+                                <th scope="col" class="text-sm font-medium text-gray-50 px-6 py-2">
+                                    #
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-gray-50 px-6 py-2">
+                                    Num SAF
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-gray-50 px-6 py-2">
+                                    Date SAF
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-gray-50 px-6 py-2">
+                                    Pièces
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-gray-50 px-6 py-2">
+                                    Période Demandée
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-gray-50 px-6 py-2">
+                                    Opérations
+                                </th>
+                                </tr>
+                            </thead class="border-b">
+                            <tbody>
+                            <template x-for="(demande, index) in mystagiaire.demandes">
+                                <tr class="bg-cyan-400 border-b">
+                                <td class="px-6 py-2 whitespace-nowrap text-sm font-medium text-gray-900" x-text="index + 1"></td>
+                                <td class="text-sm text-cyan-900 font-light px-6 py-2 whitespace-nowrap" x-text="demande.num_saf">
+
+                                </td>
+                                <td class="text-sm text-cyan-900 font-light px-6 py-2 whitespace-nowrap" x-text="demande.date_saf">
+
+                                </td>
+                                <td class="text-sm text-cyan-900 font-light px-6 py-2 whitespace-nowrap" x-text="demande.pieces">
+
+                                </td>
+                                <td class="text-sm text-cyan-900 font-light px-6 py-2 whitespace-nowrap" x-text="demande.periode_demandee">
+
+                                </td>
+                                <td class="text-sm text-cyan-900 font-light px-6 py-2 whitespace-nowrap">
+                                    <a x-cloak x-bind:href="'requests.edit' +'/' + demande.id" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                            <title>Edit</title>
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                        </svg>
+
+                                    </a>
+                                </td>
+                                </tr class="bg-white border-b">
+                            </template>
+
+                            </tbody>
+                        </table>
+
                     </div>
 
 
