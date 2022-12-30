@@ -4,7 +4,7 @@
     </x-slot> -->
 
     <div class="py-12" x-data = "alpineInstance()">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-max mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200 flex flex-col justify-center items-center">
                     @if (Session::has('info'))
@@ -20,7 +20,7 @@
                                 <input list="stagiaires" id="selectedStagiaire" class="block p-2 mt-1 w-full border-2 border-slate-700" @change="newSelection()" x-model="selectedStagiaire">
                                     <datalist id="stagiaires" >
                                         @foreach ($stagiaires as $stagiaire)
-                                            <option value="{{$stagiaire->id}}" >{{$stagiaire->nom}} {{$stagiaire->nom}}</option>
+                                            <option value="{{$stagiaire->id}}" >{{$stagiaire->nom}} {{$stagiaire->prenom}}</option>
                                         @endforeach
                                     </datalist>
                             </form>
@@ -101,7 +101,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="relative overflow-x-auto shadow-md sm:rounded-lg p-4  bg-lime-500 mt-2">
+                    <div class="relative max-w-fit shadow-md sm:rounded-lg p-4  bg-lime-500 mt-2">
                         <div class="flex justify-between">
                             <h1 class=" text-cyan-800 uppercase">les stages effectués</h1>
 
@@ -147,11 +147,16 @@
                                 <td class="text-sm text-cyan-900 font-light px-6 py-2 whitespace-nowrap" x-text="stage.dateFin">
 
                                 </td>
-                                <td class="text-sm text-cyan-900 font-light px-6 py-2 whitespace-nowrap" x-text="stage.subject">
+                                <td class="text-sm text-cyan-900 font-light px-6 py-2" x-text="stage.subject">
 
                                 </td>
-                                <td class="text-sm text-cyan-900 font-light px-6 py-2 whitespace-nowrap" x-text="stage.attestationStatut">
+                                <td class="text-sm text-cyan-900 font-light px-6 py-2">
+                                    <span class="inline-flex items-center justify-center px-2 py-1 mr-2 text-xs font-bold leading-none text-blue-900 bg-violet-100 rounded-full" x-text="stage.attestationStatut">
 
+                                    </span>
+                                    <span class="inline-flex items-center justify-center px-2 py-1 mr-2 mt-1 text-xs font-bold leading-none text-violet-100 bg-red-700 rounded-full" x-text="stage.attestationReferences">
+
+                                    </span>
                                 </td>
                                 <td class="text-sm text-cyan-900 font-light px-6 py-2 whitespace-nowrap" x-text="stage.affectation">
 

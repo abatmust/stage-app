@@ -35,7 +35,7 @@
                                         </div>
                                         <div>
                                                     <x-label for="subject" :value="__('Sujet')" />
-                                                    <x-textarea id="subject" name="subject" class="block mt-1 w-full" value="{{$stage->subject}}"/>
+                                                    <x-textarea id="subject" name="subject" class="block mt-1 w-full" value="{!! $stage->subject !!}"/>
                                         </div>
 
                                 </div>
