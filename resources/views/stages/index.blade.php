@@ -32,6 +32,9 @@
                     Attestation de stage
                     </th>
                     <th scope="col" class="px-6 py-4">
+                    Observation
+                    </th>
+                    <th scope="col" class="px-6 py-4">
                     Ajouté:
                     </th>
                     <th scope="col" class="px-6 py-4">
@@ -84,6 +87,14 @@
                                         {{$stage->attestationReferences}}
                                     </span>
                                 @endif
+                            </td>
+                            <td class="px-6 py-4">
+                                @if($stage->observation)
+                                    <span class="inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white bg-red-600 rounded-full text-center">
+                                        {{$stage->observation}}
+                                    </span>
+                                @endif
+
                             </td>
                             <td class="px-6 py-4">
 

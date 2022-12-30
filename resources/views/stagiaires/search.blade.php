@@ -133,6 +133,9 @@
                                     Affectation
                                 </th>
                                 <th scope="col" class="text-sm font-medium text-gray-50 px-6 py-2">
+                                    observation
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-gray-50 px-6 py-2">
                                     Opérations
                                 </th>
                                 </tr>
@@ -159,6 +162,9 @@
                                     </span>
                                 </td>
                                 <td class="text-sm text-cyan-900 font-light px-6 py-2 whitespace-nowrap" x-text="stage.affectation">
+
+                                </td>
+                                <td class="text-sm text-cyan-900 font-light px-6 py-2 whitespace-nowrap" x-text="stage.observation">
 
                                 </td>
                                 <td class="text-sm text-cyan-900 font-light px-6 py-2 whitespace-nowrap">

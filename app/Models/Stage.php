@@ -17,7 +17,8 @@ class Stage extends Model
         'attestationStatut',
         'attestationReferences',
         'stagiaire_id',
-        'affectation'
+        'affectation',
+        'observation'
     ];
     protected static function booted()
     {

@@ -85,6 +85,10 @@
                                                         @endforeach
                                                         </datalist>
                                             </div>
+                                            <div>
+                                                    <x-label for="observation" :value="__('Observation')" />
+                                                    <x-textarea id="observation" name="observation" class="block mt-1 w-full" value="{!! $stage->observation !!}"/>
+                                        </div>
                                             <x-button class="mt-7">
                                                 {{ __('Modifier') }}
                                             </x-button>

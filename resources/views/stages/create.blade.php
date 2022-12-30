@@ -81,6 +81,11 @@
 
                                                 </datalist>
                                     </div>
+                                    <div class="">
+                                            <x-label for="observation" :value="__('observation')" class="block w-full"/>
+                                            <x-textarea id="observation" name="observation" class="block mt-1 w-full"/>
+
+                                    </div>
 
 
 

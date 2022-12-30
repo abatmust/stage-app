@@ -55,8 +55,9 @@ class StageController extends Controller
      public function update(Request $request, Stage $stage){
 
          $stage->update($request->all());
-         $stages = Stage::orderBy('created_at', 'DESC')->with('stagiaire')->paginate(5);
-         return view('stages.index', ['stages' => $stages]);
+         //$stages = Stage::orderBy('created_at', 'DESC')->with('stagiaire')->paginate(5);
+         return redirect()->route('stages.index');
+         //return view('stages.index', ['stages' => $stages]);
 
         }
         public function getAttestation(Request $request, string $stage){
