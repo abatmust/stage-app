@@ -16,4 +16,29 @@ class DiversController extends Controller
 
         return view('divers.etiquette', ['stages' => $stages]);
     }
+    public function statistiques(){
+
+
+        $stages = Stage::whereHas('stagiaire')->whereNotIn('attestationStatut',  ['Délivrée'])->with(['stagiaire'])->get();
+
+        return view('divers.statistiques', ['stages' => $stages]);
+    }
+    public function getStatistiques(Request $request, $annee){
+
+        $nbre = Stage::whereYear('created_at', $annee)->get();
+        return $nbre;
+
+
+    }
+
+
+    public function fichefinstage(){
+
+
+
+
+        return view('divers.fichefinstage');
+    }
+
+
 }

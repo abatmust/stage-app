@@ -44,6 +44,16 @@
                                 <div class="shadow-md sm:rounded-lg p-4 bg-lime-400 mt-6 mb-6 border-8 border-slate-900 text-xl" style="width: 600px">
                                     <div class="flex justify-between">
                                         <div class="underline">
+                                            Numéro:
+                                        </div>
+                                        <div class="text-center grow font-black">
+                                            <span class="text-4xl" x-text="stage.id"></span>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <div class="underline">
                                             Stagiaire:
                                         </div>
                                         <div class="text-center grow font-black">

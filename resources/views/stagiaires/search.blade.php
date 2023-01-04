@@ -17,7 +17,7 @@
                         <h2 class="uppercase text-lg text-center ml-3 font-extrabold text-cyan-800">Rechercher par stagiaire</h2>
                     </div>
                     <form action="">
-                                <input list="stagiaires" id="selectedStagiaire" class="block p-2 mt-1 w-full border-2 border-slate-700" @change="newSelection()" x-model="selectedStagiaire">
+                                <input list="stagiaires" id="selectedStagiaire" class="block p-2 mt-1 w-full border-2 border-slate-700 text-center" @change="newSelection()" x-model="selectedStagiaire">
                                     <datalist id="stagiaires" >
                                         @foreach ($stagiaires as $stagiaire)
                                             <option value="{{$stagiaire->id}}" >{{$stagiaire->nom}} {{$stagiaire->prenom}}</option>

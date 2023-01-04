@@ -42,6 +42,8 @@ Route::middleware('auth')->group(function () {
     //Divers
 
     Route::get('/divers.etiquette', [DiversController::class, 'etiquette'])->name('divers.etiquette');
+    Route::get('/divers.statistiques', [DiversController::class, 'statistiques'])->name('divers.statistiques');
+    Route::get('/divers.fichefinstage', [DiversController::class, 'fichefinstage'])->name('divers.fichefinstage');
 
     //stagiaires
     Route::get('/stagiaires.index', [StagiaireController::class, 'index'])->name('stagiaires.index');

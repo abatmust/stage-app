@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DiversController;
 use App\Http\Controllers\StagiaireController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -22,3 +23,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::get('/api.stagiaires/{stagiaire}', [StagiaireController::class, 'getStagiaire'])->name('getStagiaire');
+Route::get('/api.statistiques/{annee}', [DiversController::class, 'getStatistiques'])->name('getStatistiques');

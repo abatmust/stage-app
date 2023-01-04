@@ -120,6 +120,12 @@
                                     <x-dropdown-link :href="route('divers.etiquette')">
                                         {{ __('Etiquettes') }}
                                     </x-dropdown-link>
+                                    <x-dropdown-link :href="route('divers.statistiques')">
+                                        {{ __('Statistiques') }}
+                                    </x-dropdown-link>
+                                    <x-dropdown-link :href="route('divers.fichefinstage')">
+                                        {{ __('Fiche de fin de stage') }}
+                                    </x-dropdown-link>
 
                                 </form>
                             </x-slot>
