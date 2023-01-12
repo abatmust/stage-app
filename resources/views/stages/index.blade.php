@@ -44,14 +44,23 @@
                     </thead>
                     <tbody>
                         @forelse ($stages as $stage)
-                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600">
                             <td class="w-4 p-4">
 
                             </td>
                             <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
-                            {!! date('d/m/Y', strtotime($stage->dateDebut)) !!}
+                            @if ($stage->dateDebut)
+                                {!! date('d/m/Y', strtotime($stage->dateDebut)) !!}
+                            @else
+                                ...
+                            @endif
                              au
-                            {!! date('d/m/Y', strtotime($stage->dateFin)) !!}
+                             @if ($stage->dateFin)
+                                {!! date('d/m/Y', strtotime($stage->dateFin)) !!}
+                            @else
+                                ...
+                            @endif
+
                             </th>
                             <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
                             @if ($stage->stagiaire)

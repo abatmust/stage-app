@@ -15,7 +15,7 @@
         <style>
             body {
                 font-family: Arial, Helvetica, sans-serif !important;
-                font-size: 16px !important;
+                font-size: 20px !important;
                 line-height: 2 !important;
                 }
             .myline {
@@ -165,12 +165,9 @@
 
                     </tbody>
                 </table>
-                <br>
+
                 <h3 class="uppercase font-extrabold"> <span class=" bg-amber-600 py-1">évaluation générale:</span> </h3>
-                <p class="text-lg text-justify screen:text-center">
 
-
-                </p>
                 <div class="myline">
                 <p class="sp-filler-after">-</p>
                 <p class="sp-filler-after">-</p>
@@ -179,9 +176,9 @@
                 </div>
                 <br>
                 <div class="flex">
-                    <div class="text-center basis-2/5 font-bold text-xl">Le responsable du stage</div>
+                    <div class="text-center basis-2/5 font-bold te">Le responsable du stage</div>
                     <div class="text-center basis-1/5"></div>
-                    <div class="text-left basis-2/5 font-bold text-xl">Le Chef du Service</div>
+                    <div class="text-left basis-2/5 font-bold te">Le Chef du Service</div>
                 </div>
 
 

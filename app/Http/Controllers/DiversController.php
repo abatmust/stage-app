@@ -25,7 +25,7 @@ class DiversController extends Controller
     }
     public function getStatistiques(Request $request, $annee){
 
-        $nbre = Stage::whereYear('created_at', $annee)->get();
+        $nbre = Stage::whereYear('created_at', $annee)->with('stagiaire')->orderBy('dateDebut', 'desc')->get();
         return $nbre;
 
 
