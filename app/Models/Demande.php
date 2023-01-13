@@ -15,7 +15,8 @@ class Demande extends Model
         'date_saf',
         'pieces',
         'pj',
-        'periode_demandee'
+        'periode_demandee',
+        'observation'
     ];
     protected static function booted()
 {

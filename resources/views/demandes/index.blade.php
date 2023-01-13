@@ -32,6 +32,9 @@
                     Periode demandée
                     </th>
                     <th scope="col" class="px-6 py-4">
+                    Observation
+                    </th>
+                    <th scope="col" class="px-6 py-4">
                     Ajouté:
                     </th>
                     <th scope="col" class="px-6 py-4">
@@ -72,6 +75,9 @@
                             </td>
                             <td class="px-6 py-4">
                             {{$demande->periode_demandee}}
+                            </td>
+                            <td class="px-6 py-4">
+                            {{$demande->observation}}
                             </td>
                             <td class="px-6 py-4">
 

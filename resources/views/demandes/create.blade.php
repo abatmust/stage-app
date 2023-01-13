@@ -109,6 +109,7 @@
                                         <div>
                                             <x-input name="requesters[ville][]" class="block mt-1 w-full" type="text"/>
                                         </div>
+
                                         <div class="flex items-center">
                                             <button @click.prevent="removeParent($el)">
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="orange">
@@ -125,7 +126,7 @@
                             <fieldset class="border border-solid border-red-800 p-3 text-blue-700 mt-2">
                             <div id="myRequesters" class="m-2">
                                 <legend class="text-sm uppercase">la demande</legend>
-                            <div class="flex space-x-2">
+                            <div class="flex justify-around">
 
                                         <div>
                                                     <x-label for="num_saf" :value="__('N° SAF')" />
@@ -143,6 +144,15 @@
                                                     <x-label for="periode_demandee" :value="__('Période demandée')" />
                                                     <x-input name="demande[periode_demandee]" class="block mt-1 w-full" type="text"/>
                                         </div>
+
+
+                            </div>
+                            <div class="flex justify-around">
+                            <div class="">
+                                            <x-label for="observation" :value="__('Observation')" class="block w-full"/>
+                                            <x-textarea id="observation" name="demande[observation]" class="block mt-1 w-full"/>
+
+                                            </div>
                                         <div>
                                                     <x-label for="PJ" :value="__('Pièce jointe')" />
                                                     <x-input name="PJ" accept="application.pdf" class="inline-flex items-end px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150" type="file"/>
