@@ -66,6 +66,15 @@
                             @if ($stage->stagiaire)
                                     {{$stage->stagiaire->nom}} {{$stage->stagiaire->prenom}}
                                 @endif
+                                <br>
+
+                                <span class="flex-block items-center justify-center px-2 py-1 mr-2 text-xs font-bold leading-none text-blue-300 @if ($stage->assurance)
+                                bg-green-600
+                                @else
+                                bg-red-600
+                                @endif rounded-full">
+                                    assurance
+                                </span>
 
 
 

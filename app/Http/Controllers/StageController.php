@@ -27,13 +27,20 @@ class StageController extends Controller
             'subject' => 'string|nullable',
             'attestationStatut' => 'string|nullable',
             'attestationReferences' => 'string|nullable',
-            'affectation' => 'string|nullable'
+            'affectation' => 'string|nullable',
+            'observation' => 'string|nullable',
+            'assurance' => 'string|nullable'
 
 
 
 
 
         ]);
+        if($request['assurance'] and $request['assurance'] == "on"){
+            $request['assurance'] = true;
+        }else{
+            $request['assurance'] = false;
+        }
         Stage::create($request->except('_token'));
         return redirect()->route('stages.index');
      }
@@ -53,6 +60,11 @@ class StageController extends Controller
         return view('stages.edit', ['stage' => $stage, 'stagiaires' => $stagiaires, 'entities' => $affectation->getEntities()]);
      }
      public function update(Request $request, Stage $stage){
+        if($request['assurance'] and $request['assurance'] == "on"){
+            $request['assurance'] = true;
+        }else{
+            $request['assurance'] = false;
+        }
 
          $stage->update($request->all());
          //$stages = Stage::orderBy('created_at', 'DESC')->with('stagiaire')->paginate(5);
