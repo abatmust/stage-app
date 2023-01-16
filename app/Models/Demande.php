@@ -16,7 +16,9 @@ class Demande extends Model
         'pieces',
         'pj',
         'periode_demandee',
-        'observation'
+        'observation',
+        'specialite',
+        'sort'
     ];
     protected static function booted()
 {

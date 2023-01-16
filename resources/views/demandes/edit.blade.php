@@ -43,6 +43,35 @@
                                                     <x-label for="observation" :value="__('Observation')" />
                                                     <x-textarea id="observation" name="demande[observation]" class="block mt-1 w-full" value="{!! $demande->observation !!}"/>
                                         </div>
+                            </div>
+                            <div class="flex space-x-2">
+                            <div>
+                                                    <x-label for="specialite" :value="__('Spécialité')" />
+
+                                                    <x-input list="specialites" id="specialite" name="demande[specialite]" class="block mt-1 w-full p-1" value="{{$demande->specialite}}"/>
+                                                    <datalist id="specialites" >
+                                                        @foreach ($specialites as $specialite)
+                                                            <option class="block mt-1 w-full p-1" >{{ $specialite->specialite}}</option>
+                                                        @endforeach
+
+
+                                                        </datalist>
+
+                                        </div>
+                                        <div>
+                                                    <x-label for="sort" :value="__('Sort')" />
+
+                                                    <x-input list="sorts" id="sort" name="demande[sort]" class="block mt-1 w-full p-1" value="{{$demande->sort}}"/>
+                                                    <datalist id="sorts" >
+
+                                                        @foreach ($sorts as $sort)
+                                                            <option class="block mt-1 w-full p-1" >{{ $sort->sort}}</option>
+                                                        @endforeach
+
+                                                        </datalist>
+
+                                        </div>
+
                                         <div>
                                                     <x-label for="PJ" :value="__('Pièce jointe')" />
                                                     <x-input name="PJ" accept="application.pdf" class="inline-flex items-end px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150" type="file"/>

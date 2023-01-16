@@ -148,15 +148,43 @@
 
                             </div>
                             <div class="flex justify-around">
-                            <div class="">
+                                        <div>
+                                                    <x-label for="specialite" :value="__('Spécialité')" />
+
+                                                    <x-input list="specialites" id="specialite" name="demande[specialite]" class="block mt-1 w-full p-1"/>
+                                                    <datalist id="specialites" >
+                                                        @foreach ($specialites as $specialite)
+                                                            <option class="block mt-1 w-full p-1" >{{ $specialite->specialite}}</option>
+                                                        @endforeach
+
+
+                                                        </datalist>
+
+                                        </div>
+                                        <div>
+                                                    <x-label for="sort" :value="__('Sort')" />
+
+                                                    <x-input list="sorts" id="sort" name="demande[sort]" class="block mt-1 w-full p-1"/>
+                                                    <datalist id="sorts" >
+
+                                                        @foreach ($sorts as $sort)
+                                                            <option class="block mt-1 w-full p-1" >{{ $sort->sort}}</option>
+                                                        @endforeach
+
+                                                        </datalist>
+
+                                        </div>
+                                        <div class="">
                                             <x-label for="observation" :value="__('Observation')" class="block w-full"/>
                                             <x-textarea id="observation" name="demande[observation]" class="block mt-1 w-full"/>
 
                                             </div>
+
                                         <div>
                                                     <x-label for="PJ" :value="__('Pièce jointe')" />
                                                     <x-input name="PJ" accept="application.pdf" class="inline-flex items-end px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150" type="file"/>
                                         </div>
+
                             </div>
                             </div>
                             </fieldset>

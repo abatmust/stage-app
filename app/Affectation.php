@@ -10,6 +10,7 @@ class Affectation{
         'SPA' => 'Service de la Production Agricole',
         'SEHA' => "Service de l'Equipement Hydro-Agricole",
         'SGRID' => "Service de Gestion des Réseaux d'Irrigation et de Drainage",
+        'SVOP' => "Service de la Vulgarisation et de l'Organisation Professionnelle",
         'CAM' => 'Cellule des Approvisionnements et des Marchés',
         'CAI' => "Cellule d'Audit Interne",
         'CSI' => "Cellule des Systèmes d'Information",

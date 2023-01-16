@@ -21,10 +21,15 @@ class DemandeController extends Controller
        return view('demandes.index', ['demandes' => $demandes]);
     }
     public function create(Request $request){
-       return view('demandes.create');
+        $specialites = Demande::whereNotNull('specialite')->select('specialite')->distinct()->get();
+        $sorts = Demande::whereNotNull('specialite')->select('sort')->distinct()->get();
+
+       return view('demandes.create', ['specialites' => $specialites, 'sorts' => $sorts]);
     }
     public function createwithoutstagiaire(Request $request){
-        return view('demandes.createwithoutstagiaire');
+        $specialites = Demande::whereNotNull('specialite')->select('specialite')->distinct()->get();
+        $sorts = Demande::whereNotNull('specialite')->select('sort')->distinct()->get();
+        return view('demandes.createwithoutstagiaire', ['specialites' => $specialites, 'sorts' => $sorts]);
      }
     public function store(Request $request){
 
@@ -118,7 +123,9 @@ class DemandeController extends Controller
          dd($demande);
     }
     public function edit(Request $request, Demande $demande){
-        return view('demandes.edit', ['demande' => $demande]);
+        $specialites = Demande::whereNotNull('specialite')->select('specialite')->distinct()->get();
+        $sorts = Demande::whereNotNull('specialite')->select('sort')->distinct()->get();
+        return view('demandes.edit', ['demande' => $demande], ['specialites' => $specialites, 'sorts' => $sorts]);
      }
     public function update(Request $request, Demande $demande){
 

@@ -32,6 +32,10 @@
                     Periode demandée
                     </th>
                     <th scope="col" class="px-6 py-4">
+                    Spécialité
+                    </th>
+
+                    <th scope="col" class="px-6 py-4">
                     Observation
                     </th>
                     <th scope="col" class="px-6 py-4">
@@ -67,6 +71,12 @@
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                         </svg>
                                     </a>
+                                    @if ($demande->sort)
+                                        <span class="inline-flex items-center justify-center px-2 py-1 mr-2 text-xs font-bold leading-none text-red-900 bg-yellow-600 rounded-full mt-2">
+                                            {{$demande->sort}}
+                                        </span>
+                                    @endif
+
 
 
                             </th>
@@ -75,6 +85,9 @@
                             </td>
                             <td class="px-6 py-4">
                             {{$demande->periode_demandee}}
+                            </td>
+                            <td class="px-6 py-4">
+                            {{$demande->specialite}}
                             </td>
                             <td class="px-6 py-4">
                             {{$demande->observation}}

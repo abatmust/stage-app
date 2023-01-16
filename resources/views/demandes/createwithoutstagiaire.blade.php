@@ -18,25 +18,53 @@
                                 <legend class="text-sm uppercase">la demande (sans stagiaire)</legend>
                             <div class="flex space-x-2">
 
-                                        <div>
-                                                    <x-label for="num_saf" :value="__('N° SAF')" />
-                                                    <x-input name="demande[num_saf]" class="block mt-1 w-full" type="text" required autofocus/>
+                                <div>
+                                    <x-label for="num_saf" :value="__('N° SAF')" />
+                                    <x-input name="demande[num_saf]" class="block mt-1 w-full" type="text" required autofocus/>
+                                </div>
+                                <div>
+                                    <x-label for="date_saf" :value="__('Date SAF')" />
+                                    <x-input id="saf_date" @keyup.tab="setCurrentDate()" name="demande[date_saf]" class="block mt-1 w-full" type="date" required/>
+                                </div>
+                                <div>
+                                    <x-label for="pieces" :value="__('Pièces')" />
+                                    <x-input name="demande[pieces]" class="block mt-1 w-full" type="text"/>
+                                </div>
+                                <div>
+                                    <x-label for="periode_demandee" :value="__('Période demandée')" />
+                                    <x-input name="demande[periode_demandee]" class="block mt-1 w-full" type="text"/>
+                                </div>
+                            </div>
+                                <div class="flex space-x-2">
+                                <div>
+                                                    <x-label for="specialite" :value="__('Spécialité')" />
+
+                                                    <x-input list="specialites" id="specialite" name="demande[specialite]" class="block mt-1 w-full p-1"/>
+                                                    <datalist id="specialites" >
+                                                        @foreach ($specialites as $specialite)
+                                                            <option class="block mt-1 w-full p-1" >{{ $specialite->specialite}}</option>
+                                                        @endforeach
+
+
+                                                        </datalist>
+
                                         </div>
                                         <div>
-                                                    <x-label for="date_saf" :value="__('Date SAF')" />
-                                                    <x-input id="saf_date" @keyup.tab="setCurrentDate()" name="demande[date_saf]" class="block mt-1 w-full" type="date" required/>
+                                                    <x-label for="sort" :value="__('Sort')" />
+
+                                                    <x-input list="sorts" id="sort" name="demande[sort]" class="block mt-1 w-full p-1"/>
+                                                    <datalist id="sorts" >
+
+                                                        @foreach ($sorts as $sort)
+                                                            <option class="block mt-1 w-full p-1" >{{ $sort->sort}}</option>
+                                                        @endforeach
+
+                                                        </datalist>
+
                                         </div>
-                                        <div>
-                                                    <x-label for="pieces" :value="__('Pièces')" />
-                                                    <x-input name="demande[pieces]" class="block mt-1 w-full" type="text"/>
-                                        </div>
-                                        <div>
-                                                    <x-label for="periode_demandee" :value="__('Période demandée')" />
-                                                    <x-input name="demande[periode_demandee]" class="block mt-1 w-full" type="text"/>
-                                        </div>
-                                        <div class="">
-                                            <x-label for="observation" :value="__('Observation')" class="block w-full"/>
-                                            <x-textarea id="observation" name="demande[observation]" class="block mt-1 w-full"/>
+                                <div class="">
+                                    <x-label for="observation" :value="__('Observation')" class="block w-full"/>
+                                    <x-textarea id="observation" name="demande[observation]" class="block mt-1 w-full"/>
 
                                             </div>
                                         <div>
