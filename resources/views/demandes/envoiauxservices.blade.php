@@ -140,10 +140,10 @@
                 <div contenteditable class="text-center text-lg font-bold" x-text="destinataire">
 
                 </div>
-                <div class="text-2xl">
-                    <h1 class="text-center uppercase underline underline-offset-8">bordereau d'envoi</h1>
+                <div class="text-2xl my-3">
+                    <h1 class="text-center uppercase underline underline-offset-8 font-extrabold">bordereau d'envoi</h1>
                 </div>
-                <br>
+
                 <div class="w-full flex">
                     <div class="border-2 border-black text-center py-1 w-6/12">Désignation</div>
                     <div class="border-2 border-black text-center py-1 w-1/12 border-x-0">Nbre</div>
@@ -152,7 +152,7 @@
                 <div class="w-full flex">
                     <div class="border-2 border-black text-center py-1 w-6/12 border-t-0" style="height: 600px">
                         <div class="">
-                            <p class="text-left font-semibold ml-1">Demande<span x-show="seldemandes.length > 1">s</span> de stage exprimée<span x-show="seldemandes.length > 1">s</span> par:</p>
+                            <p class="text-left font-semibold ml-1 mt-2">Demande<span x-show="seldemandes.length > 1">s</span> de stage exprimée<span x-show="seldemandes.length > 1">s</span> par:</p>
                         </div>
                         <div class="">
 
