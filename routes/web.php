@@ -66,6 +66,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/requests.addStagiaire/{demande}', [DemandeController::class, 'addStagiaireToDemande'])->name('addStagiaireToDemande');
     Route::post('/requests.detachStagiaire/{demande}', [DemandeController::class, 'detachStagiaireFromDemande'])->name('detachStagiaireFromDemande');
     Route::delete(('deleteDemande/{demande}'),[DemandeController::class, 'deleteDemande'])->name('deleteDemande');
+    Route::get('/requests.envoiauxservices', [DemandeController::class, 'envoiauxservices'])->name('requests.envoiauxservices');
 
 
 });

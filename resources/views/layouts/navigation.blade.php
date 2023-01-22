@@ -42,6 +42,9 @@
                                     <x-dropdown-link :href="route('requests.createwithoutstagiaire')">
                                         {{ __('Nouvelle Demande sans stagiaire') }}
                                     </x-dropdown-link>
+                                    <x-dropdown-link :href="route('requests.envoiauxservices')">
+                                        {{ __('Envoi aux services') }}
+                                    </x-dropdown-link>
                                 </form>
                             </x-slot>
                         </x-dropdown>

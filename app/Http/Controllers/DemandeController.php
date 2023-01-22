@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Affectation;
 use App\Models\Demande;
 use App\Models\Stagiaire;
 use Carbon\Carbon;
 use Facade\FlareClient\Stacktrace\File;
 use Faker\Core\Uuid;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
@@ -172,6 +174,20 @@ class DemandeController extends Controller
         $demande->delete();
 
         return redirect()->back();
+     }
+     public function envoiauxservices(){
+        $entities = new Affectation;
+
+        $demandes = DB::select("SELECT d.id, s.nom, s.prenom, d.num_saf, d.date_saf, d.specialite, d.sort, s.institut, s.ville, d.created_at
+        FROM demandes d JOIN  demande_stagiaire ds JOIN stagiaires s
+        ON (d.id = ds.demande_id AND s.id = ds.stagiaire_id)
+        WHERE d.sort LIKE '%stance%'
+        ORDER BY d.created_at desc");
+        //dd($demandes);
+
+
+
+        return view('demandes.envoiauxservices', ['entities' => array_flip($entities->responsables), 'demandes' => $demandes]);
      }
 
 }
