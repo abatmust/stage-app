@@ -126,33 +126,33 @@
             <main class="mb-auto h-10 screen:mx-auto">
                 <br>
                 <div class="flex">
-                    <div class="text-center basis-2/5">N°: ..................... ORH/SAF/BFP</div>
+                    <div class="text-center basis-2/5">N°: <span contenteditable>.....................</span> ORH/SAF/<span class="uppercase" contenteditable>BFP</span></div>
                     <div class="text-center basis-1/5"></div>
-                    <div class="text-left basis-2/5">Marrakech, le ...................................</div>
+                    <div class="text-left basis-2/5">Marrakech, le <span contenteditable>...................................</span></div>
                 </div>
 
-                <div class="text-center text-lg font-bold">
+                <div contenteditable class="text-center text-lg font-bold">
                     Le Chef du Service Administratif et financier
                 </div>
                 <div class="text-center uppercase text-2xl font-bold">
-                    a
+                    à
                 </div>
                 <div contenteditable class="text-center text-lg font-bold" x-text="destinataire">
 
                 </div>
-                <div class="text-2xl my-3">
-                    <h1 class="text-center uppercase underline underline-offset-8 font-extrabold">bordereau d'envoi</h1>
+                <div class="text-2xl my-3 flex">
+                    <h1 class="rounded-md p-2 mx-auto text-center uppercase font-extrabold border-2 border-black inline">bordereau d'envoi</h1>
                 </div>
 
-                <div class="w-full flex">
+                <div class="w-full flex w-11/12 mx-auto">
                     <div class="border-2 border-black text-center py-1 w-6/12">Désignation</div>
                     <div class="border-2 border-black text-center py-1 w-1/12 border-x-0">Nbre</div>
                     <div class="border-2 border-black text-center py-1 w-5/12">Observations</div>
                 </div>
-                <div class="w-full flex">
-                    <div class="border-2 border-black text-center py-1 w-6/12 border-t-0" style="height: 600px">
+                <div class="w-full flex w-11/12 mx-auto">
+                    <div class="relative border-2 border-black text-center py-1 w-6/12 border-t-0" style="height: 600px">
                         <div class="">
-                            <p class="text-left font-semibold ml-1 mt-2">Demande<span x-show="seldemandes.length > 1">s</span> de stage exprimée<span x-show="seldemandes.length > 1">s</span> par:</p>
+                            <p contenteditable class="text-justify font-semibold ml-1 mt-2">Demande<span x-show="seldemandes.length > 1">s</span> de stage exprimée<span x-show="seldemandes.length > 1">s</span> par:</p>
                         </div>
                         <div class="">
 
@@ -169,23 +169,24 @@
                                             </template>
 
                         </div>
+                        <div contenteditable class="absolute bottom-0 p-2 text-xs text-justify"></div>
                     </div>
                     <div class="border-2 border-black text-center py-1 w-1/12 border-t-0 border-x-0 grow-0" style="height: 600px">
-                    <br>
-                    <template x-for="dmd in seldemandes">
+                        <br>
+                        <template x-for="dmd in seldemandes">
 
-                    <div class="block mt-1 w-full p-1">
-                        <div contenteditable class="text-center" x-text="'01'"></div>
-                        <div x-show="getdemandebyid(dmd)[0].specialite" class="text-center underline"></div>
-                    </div>
-
-
+                        <div class="block mt-1 w-full p-1">
+                            <div contenteditable class="text-center" x-text="'01'"></div>
+                            <div x-show="getdemandebyid(dmd)[0].specialite" class="text-center underline"></div>
+                        </div>
 
 
-</template>
+
+
+                        </template>
                     </div>
                     <div class="border-2 border-black text-center py-1 w-5/12 border-t-0" style="height: 600px">
-                        <h class="underline uppercase font-bold my-4">transmis</h>
+                        <h contenteditable class="underline uppercase font-bold my-4">transmis</h>
                         <p contenteditable class="mx-2 text-justify">En vous demandant de bien vouloir me faire parvenir dans le plus bref délai votre avis au sujet de l'accueil du stagiaire indiqué ci-contre dans votre entité ainsi que la période de stage prévue.</p>
                     </div>
                 </div>

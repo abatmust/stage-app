@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DemandeController;
 use App\Http\Controllers\DiversController;
+use App\Http\Controllers\MarcheController;
 use App\Http\Controllers\StageController;
 use App\Http\Controllers\StagiaireController;
 
@@ -25,6 +26,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    //marchés
+    Route::get('/marches.create', [MarcheController::class, 'create'])->name('marches.create');
+    Route::post('/marches.store', [MarcheController::class, 'store'])->name('marches.store');
+    Route::get('/marches.index', [MarcheController::class, 'index'])->name('marches.index');
+    Route::get('/marches.edit/{marche}', [MarcheController::class, 'edit'])->name('marches.edit');
+    Route::put('/marches.update/{marche}', [MarcheController::class, 'update'])->name('marches.update');
+    Route::delete(('deleteMarche/{marche}'),[MarcheController::class, 'deleteMarche'])->name('deleteMarche');
     //stage
     Route::get('/stages.create', [StageController::class, 'create'])->name('stages.create');
     Route::post('/stages.store', [StageController::class, 'store'])->name('stages.store');

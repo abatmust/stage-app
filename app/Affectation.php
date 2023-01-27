@@ -4,7 +4,7 @@ class Affectation{
 
     public $entities = [
         'SAF' => 'Service Administratif et Financier',
-        'SPP' => 'Service de Programation et de Planification',
+        'SPP' => 'Service de Programmation et de Planification',
         'SEL' => "Service d'Elevage",
         'SM' => 'Service du Matériel',
         'SPA' => 'Service de la Production Agricole',
@@ -23,7 +23,7 @@ class Affectation{
     ];
     public $responsables = [
         'SAF' => 'Mr le Chef du Service Administratif et Financier',
-        'SPP' => 'Mr le Chef du Service de Programation et de Planification',
+        'SPP' => 'Mr le Chef du Service de Programmation et de Planification',
         'SEL' => "Mr le Chef du Service d'Elevage",
         'SM' => 'Mr le Chef du Service du Matériel',
         'SPA' => 'Mr le Chef du Service de la Production Agricole',
