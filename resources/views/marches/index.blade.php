@@ -64,7 +64,7 @@
                             {{$marche->type}}
 
                             </td>
-                            <td class="px-6 py-4">
+                            <td class="px-6 py-4 line-clamp-1 hover:line-clamp-3">
                             {{$marche->objet}}
                             </td>
                             <td class="px-6 py-4">
