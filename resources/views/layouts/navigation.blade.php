@@ -1,9 +1,26 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100 print:hidden">
+<nav x-data="{ open: false }" class="bg-white border-b border-gray-100 print:hidden relative">
     <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+
+<div class="bg-gradient-to-r from-cyan-300 to-blue-800 h-[50px] relative overflow-hidden">
+            <div class="absolute transform -rotate-45 bg-emerald-500 z-10 text-center text-white font-semibold py-1 left-[10px] top-[10px] w-[136px] shadow-lg">
+                V-01.23
+            </div>
+
+</div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
+
+
+
+
+
         <div class="flex justify-between h-16">
+
+
             <div class="flex">
                 <!-- Logo -->
+
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
                         <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
@@ -37,6 +54,10 @@
                                     </x-dropdown-link>
                                     <x-dropdown-link :href="route('marches.index')">
                                         {{ __('Marchés et Bons de Commandes') }}
+                                    </x-dropdown-link>
+
+                                    <x-dropdown-link :href="route('themes.index')">
+                                        {{ __('Liste des Thèmes de formation') }}
                                     </x-dropdown-link>
 
                                 </form>
@@ -159,7 +180,10 @@
                                 </form>
                             </x-slot>
                         </x-dropdown>
+
                     </div>
+
+
                 </div>
             </div>
 

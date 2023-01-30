@@ -5,7 +5,7 @@ use App\Http\Controllers\DiversController;
 use App\Http\Controllers\MarcheController;
 use App\Http\Controllers\StageController;
 use App\Http\Controllers\StagiaireController;
-
+use App\Http\Controllers\ThemeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,6 +26,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    //marchés
+    Route::get('/themes.create', [ThemeController::class, 'create'])->name('themes.create');
+    Route::post('/themes.store', [ThemeController::class, 'store'])->name('themes.store');
+    Route::get('/themes.index', [ThemeController::class, 'index'])->name('themes.index');
+    Route::get('/themes.edit/{theme}', [ThemeController::class, 'edit'])->name('themes.edit');
+    Route::put('/themes.update/{theme}', [ThemeController::class, 'update'])->name('themes.update');
+    Route::delete(('deleteTheme/{theme}'),[ThemeController::class, 'deleteTheme'])->name('deleteTheme');
     //marchés
     Route::get('/marches.create', [MarcheController::class, 'create'])->name('marches.create');
     Route::post('/marches.store', [MarcheController::class, 'store'])->name('marches.store');
