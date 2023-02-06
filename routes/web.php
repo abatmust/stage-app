@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\AgentController;
 use App\Http\Controllers\DemandeController;
 use App\Http\Controllers\DiversController;
 use App\Http\Controllers\MarcheController;
+use App\Http\Controllers\SessionController;
 use App\Http\Controllers\StageController;
 use App\Http\Controllers\StagiaireController;
 use App\Http\Controllers\ThemeController;
@@ -26,7 +28,24 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-    //marchés
+    //agents
+    Route::get('/agents.create', [AgentController::class, 'create'])->name('agents.create');
+    Route::post('/agents.store', [AgentController::class, 'store'])->name('agents.store');
+    Route::get('/agents.index', [AgentController::class, 'index'])->name('agents.index');
+    Route::get('/agents.edit/{agent}', [AgentController::class, 'edit'])->name('agents.edit');
+    Route::put('/agents.update/{agent}', [AgentController::class, 'update'])->name('agents.update');
+    Route::delete(('deleteagent/{agent}'),[AgentController::class, 'deleteagent'])->name('deleteAgent');
+    //sessions
+    Route::get('/sessions.create', [SessionController::class, 'create'])->name('sessions.create');
+    Route::get('/sessions.participation/{session}', [SessionController::class, 'participation'])->name('sessions.participation');
+    Route::post('/sessions.store', [SessionController::class, 'store'])->name('sessions.store');
+    Route::post('/sessions.addAgents/{session}', [SessionController::class, 'addAgents'])->name('sessions.addAgents');
+    Route::post('/sessions.detachAgent/{session}/{agent}', [SessionController::class, 'detachAgent'])->name('sessions.detachAgent');
+    Route::get('/sessions.index', [SessionController::class, 'index'])->name('sessions.index');
+    Route::get('/sessions.edit/{session}', [SessionController::class, 'edit'])->name('sessions.edit');
+    Route::put('/sessions.update/{session}', [SessionController::class, 'update'])->name('sessions.update');
+    Route::delete(('deletesession/{session}'),[SessionController::class, 'deletesession'])->name('deleteSession');
+    //themes
     Route::get('/themes.create', [ThemeController::class, 'create'])->name('themes.create');
     Route::post('/themes.store', [ThemeController::class, 'store'])->name('themes.store');
     Route::get('/themes.index', [ThemeController::class, 'index'])->name('themes.index');

@@ -141,9 +141,14 @@
                                 </tr>
                             </thead class="border-b">
                             <tbody>
-                            <template x-for="(stage, index) in mystagiaire.stages">
-                                <tr class="bg-cyan-400 border-b">
-                                <td class="px-6 py-2 whitespace-nowrap text-sm font-medium text-gray-900" x-text="index + 1"></td>
+                            <template x-for="(stage, index) in mystagiaire.allstages">
+                                <tr class="bg-cyan-400 border-b" :class="stage.deleted_at ? 'line-through' : ''">
+                                <td class="px-6 py-2 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <span x-text="index + 1"></span>
+                                        <span class="border-2 border-red-600 p-1 rounded-full">
+                                        N°:<span x-text="stage.id"></span>
+                                    </span>
+                                </td>
                                 <td class="text-sm text-cyan-900 font-light px-6 py-2 whitespace-nowrap" x-text="stage.dateDebut">
 
                                 </td>
@@ -173,7 +178,7 @@
 
                                 </td>
                                 <td class="text-sm text-cyan-900 font-light px-6 py-2 whitespace-nowrap">
-                                    <a x-cloak x-bind:href="'stages.edit' +'/' + stage.id" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                                    <a x-cloak x-bind:href="'stages.edit' +'/' + stage.id" class="font-medium text-blue-600 dark:text-blue-500 hover:underline" :class="stage.deleted_at ? 'hidden' : ''">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                             <title>Edit</title>
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
@@ -217,6 +222,9 @@
                                     Période Demandée
                                 </th>
                                 <th scope="col" class="text-sm font-medium text-gray-50 px-6 py-2">
+                                    Sort
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-gray-50 px-6 py-2">
                                     Opérations
                                 </th>
                                 </tr>
@@ -224,7 +232,12 @@
                             <tbody>
                             <template x-for="(demande, index) in mystagiaire.demandes">
                                 <tr class="bg-cyan-400 border-b">
-                                <td class="px-6 py-2 whitespace-nowrap text-sm font-medium text-gray-900" x-text="index + 1"></td>
+                                <td class="px-6 py-2 whitespace-nowrap text-sm font-medium text-gray-900">
+                                <span x-text="index + 1"></span>
+                                        <span class="border-2 border-red-600 p-1 rounded-full">
+                                        N°:<span x-text="demande.id"></span>
+                                    </span>
+                                </td>
                                 <td class="text-sm text-cyan-900 font-light px-6 py-2 whitespace-nowrap" x-text="demande.num_saf">
 
                                 </td>
@@ -235,6 +248,9 @@
 
                                 </td>
                                 <td class="text-sm text-cyan-900 font-light px-6 py-2 whitespace-nowrap" x-text="demande.periode_demandee">
+
+                                </td>
+                                <td class="text-sm text-cyan-900 font-light px-6 py-2 whitespace-nowrap" x-text="demande.sort">
 
                                 </td>
                                 <td class="text-sm text-cyan-900 font-light px-6 py-2 whitespace-nowrap">

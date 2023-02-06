@@ -30,6 +30,7 @@ class Demande extends Model
     {
 
         return $this->belongsToMany(Stagiaire::class)->withTimestamps();
+
     }
     public function user()
     {

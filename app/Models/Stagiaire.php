@@ -40,4 +40,8 @@ class Stagiaire extends Model
 
         return $this->hasMany(Stage::class);
     }
+    public function allstages()
+    {
+        return $this->hasMany(Stage::class)->withTrashed();
+    }
 }

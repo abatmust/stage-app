@@ -46,7 +46,7 @@ class StagiaireController extends Controller
      }
      public function getStagiaire(Request $request, Stagiaire $stagiaire){
         $stagiaire->load('demandes');
-        $stagiaire->load('stages');
+        $stagiaire->load('allstages');
         return $stagiaire;
 
 

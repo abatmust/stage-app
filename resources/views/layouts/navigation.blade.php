@@ -1,13 +1,11 @@
+
+
+
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100 print:hidden relative">
     <!-- Primary Navigation Menu -->
 
 
-<div class="bg-gradient-to-r from-cyan-300 to-blue-800 h-[50px] relative overflow-hidden">
-            <div class="absolute transform -rotate-45 bg-emerald-500 z-10 text-center text-white font-semibold py-1 left-[10px] top-[10px] w-[136px] shadow-lg">
-                V-01.23
-            </div>
 
-</div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
 
@@ -20,8 +18,17 @@
 
             <div class="flex">
                 <!-- Logo -->
+                <div class="relative overflow-hidden w-56 h-full bg-white">
+                    <div class="absolute left-0 top-0 h-full w-8">
+                        <div
+                        class="absolute transform -rotate-45  bg-emerald-500  text-center text-white font-semibold py-1 left-[-34px] top-[20px] w-[170px]">
+                            V-01.23
+                        </div>
+                    </div>
+                </div>
 
                 <div class="shrink-0 flex items-center">
+
                     <a href="{{ route('dashboard') }}">
                         <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
                     </a>
@@ -58,6 +65,12 @@
 
                                     <x-dropdown-link :href="route('themes.index')">
                                         {{ __('Liste des Thèmes de formation') }}
+                                    </x-dropdown-link>
+                                    <x-dropdown-link :href="route('sessions.index')">
+                                        {{ __('Liste des sessions de formation') }}
+                                    </x-dropdown-link>
+                                    <x-dropdown-link :href="route('agents.index')">
+                                        {{ __("Liste des agents de l'ORMVAH") }}
                                     </x-dropdown-link>
 
                                 </form>
@@ -187,6 +200,8 @@
                 </div>
             </div>
 
+
+
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <x-dropdown align="right" width="48">
@@ -260,3 +275,4 @@
         </div>
     </div>
 </nav>
+
