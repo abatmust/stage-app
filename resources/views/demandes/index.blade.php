@@ -4,7 +4,7 @@
     </x-slot> -->
 
     <div class="py-12 bg-gradient-to-r from-cyan-300 to-blue-800">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden relative shadow-sm sm:rounded-lg">
             <div class="absolute transform -rotate-45 bg-orange-600 z-10 text-center text-white font-semibold py-1 left-[-40px] top-[32px] w-[170px] shadow-lg">
                 Stages

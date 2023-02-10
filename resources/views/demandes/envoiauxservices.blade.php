@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <style>
             body {
-                font-size: 18px !important;
+                font-size: 14px !important;
             }
         </style>
 
@@ -144,14 +144,15 @@
                     <h1 class="rounded-md p-2 mx-auto text-center uppercase font-extrabold border-2 border-black inline">bordereau d'envoi</h1>
                 </div>
 
-                <div class="w-full flex w-11/12 mx-auto">
+                <div class="flex w-11/12 mx-auto">
                     <div class="border-2 border-black text-center py-1 w-6/12">Désignation</div>
                     <div class="border-2 border-black text-center py-1 w-1/12 border-x-0">Nbre</div>
                     <div class="border-2 border-black text-center py-1 w-5/12">Observations</div>
                 </div>
-                <div class="w-full flex w-11/12 mx-auto">
+                <div class="flex w-11/12 mx-auto">
                     <div class="relative border-2 border-black text-center py-1 w-6/12 border-t-0" style="height: 600px">
                         <div class="">
+                        <h contenteditable class="underline uppercase font-bold my-4">...</h>
                             <p contenteditable class="text-justify font-semibold ml-1 mt-2">Demande<span x-show="seldemandes.length > 1">s</span> de stage exprimée<span x-show="seldemandes.length > 1">s</span> par:</p>
                         </div>
                         <div class="">
