@@ -3,11 +3,11 @@
 
     </x-slot> -->
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+    <div class="py-6">
+        <div class="mx-auto sm:px-6 lg:px-6">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200 flex">
-                    <div class="m-auto"  x-data="addRequesterForm">
+                <div class="p-2 px-6 bg-white border-b border-gray-200 flex">
+                    <div class="m-auto w-[400px]"  x-data="addRequesterForm">
                         <x-auth-validation-errors class="mb-4" :errors="$errors" />
                         <div class="flex justify-center items-center flex-col">
 
@@ -15,7 +15,7 @@
                                     <h2 class="uppercase text-lg text-center font-extrabold bg-teal-900 text-yellow-100 rounded-md p-1 mb-2">Modifier un marché ou bon de commande</h2>
 
                                 <div class="flex justify-center items-center bg-slate-600 p-2 rounded-md">
-                                <form method="POST" action="{{route('marches.update', ['marche' => $marche->id])}}" enctype="multipart/form-data">
+                                <form method="POST" action="{{route('marches.update', ['marche' => $marche->id])}}" enctype="multipart/form-data" class="">
                             @csrf
                             @method('PUT')
 

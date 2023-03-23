@@ -142,6 +142,13 @@
                 </div>
                 <div class="text-2xl my-3 flex">
                     <h1 class="rounded-md p-2 mx-auto text-center uppercase font-extrabold border-2 border-black inline">bordereau d'envoi</h1>
+                    <select name="" id="" class="bg-gray-700 print:hidden p-1 rounded text-blue-200 m-1" x-model="nbreGenreStagiaire">
+                        <option value="1">une stagaire</option>
+                        <option value="2">un stagaire</option>
+                        <option value="3">des stagaires</option>
+                        <option value="4">stagaires (F)</option>
+                    </select>
+
                 </div>
 
                 <div class="flex w-11/12 mx-auto">
@@ -188,7 +195,14 @@
                     </div>
                     <div class="border-2 border-black text-center py-1 w-5/12 border-t-0" style="height: 600px">
                         <h contenteditable class="underline uppercase font-bold my-4">transmis</h>
-                        <p contenteditable class="mx-2 text-justify">En vous demandant de bien vouloir me faire parvenir dans le plus bref délai votre avis au sujet de l'accueil du stagiaire indiqué ci-contre dans votre entité ainsi que la période de stage prévue.</p>
+                        <p contenteditable class="mx-2 text-justify">
+                            Pour avis au sujet de l'accueil
+
+                            <span x-text="nbreGenreStagiaire == 1 ? 'de la stagiaire indiquée' : nbreGenreStagiaire == 2 ? 'du stagiaire indiqué' : nbreGenreStagiaire == 4 ? 'des stagiaires indiquées' : 'des stagiaires indiqués'"></span>
+
+                            ci-contre dans votre entité ainsi que la période de stage prévue.
+                        </p>
+
                     </div>
                 </div>
 
@@ -209,6 +223,7 @@
         Alpine.data('initialisation', () => ({
 
             showModal: false,
+            nbreGenreStagiaire: 2,
             destinataire: null,
             seldemande: null,
             ents: {{Js::from($entities)}},

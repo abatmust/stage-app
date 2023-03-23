@@ -4,7 +4,7 @@ class Affectation{
 
     public $entities = [
         'SAF' => 'Service Administratif et Financier',
-        'SPP' => 'Service de Programmation et de Planification',
+        'SPP' => 'Service de la Planification et de la Programmation',
         'SEL' => "Service d'Elevage",
         'SM' => 'Service du Matériel',
         'SPA' => 'Service de la Production Agricole',
@@ -22,22 +22,22 @@ class Affectation{
 
     ];
     public $responsables = [
-        'SAF' => 'Mr le Chef du Service Administratif et Financier',
-        'SPP' => 'Mr le Chef du Service de Programmation et de Planification',
-        'SEL' => "Mr le Chef du Service d'Elevage",
-        'SM' => 'Mr le Chef du Service du Matériel',
-        'SPA' => 'Mr le Chef du Service de la Production Agricole',
+        'SAF' => 'Monsieur le Chef du Service Administratif et Financier',
+        'SPP' => 'Monsieur le Chef du Service de la Planification et de la Programmation',
+        'SEL' => "Monsieur le Chef du Service d'Elevage",
+        'SM' => 'Monsieur le Chef du Service du Matériel',
+        'SPA' => 'Monsieur le Chef du Service de la Production Agricole',
         'SEHA' => "Mme la Chef du Service de l'Equipement Hydro-Agricole",
-        'SGRID' => "Mr le Chef du Service de Gestion des Réseaux d'Irrigation et de Drainage",
-        'SVOP' => "Mr le Chef du Service de la Vulgarisation et de l'Organisation Professionnelle",
-        'CAM' => 'Mr le Responsable de la Cellule des Approvisionnements et des Marchés',
-        'CAI' => "Mr le Responsable de la Cellule d'Audit Interne",
-        'CSI' => "Mr le Responsable de la Cellule des Systèmes d'Information",
-        'GU' => "Mr le Responsable du Guichet Unique",
-        'LABO' => 'Mr le Chef du Service de la Production Agricole - LABO',
-        'TP' => 'Mr le Trésorier payeur',
-        'CKS' => "Mr le Coordinateur des activités de l'ORMVAH à Kelaa des Sraghna",
-        'CHC' => "Mr le Coordinateur des activités de l'ORMVAH au Haouz Central",
+        'SGRID' => "Monsieur le Chef du Service de Gestion des Réseaux d'Irrigation et de Drainage",
+        'SVOP' => "Monsieur le Chef du Service de la Vulgarisation et de l'Organisation Professionnelle",
+        'CAM' => 'Monsieur le Responsable de la Cellule des Approvisionnements et des Marchés',
+        'CAI' => "Monsieur le Responsable de la Cellule d'Audit Interne",
+        'CSI' => "Monsieur le Responsable de la Cellule des Systèmes d'Information",
+        'GU' => "Monsieur le Responsable du Guichet Unique",
+        'LABO' => 'Monsieur le Chef du Service de la Production Agricole - LABO',
+        'TP' => 'Monsieur le Trésorier payeur',
+        'CKS' => "Monsieur le Coordinateur des activités de l'ORMVAH à Kelaa des Sraghna",
+        'CHC' => "Monsieur le Coordinateur des activités de l'ORMVAH au Haouz Central",
 
     ];
     public function getEntities(){

@@ -59,6 +59,11 @@
                                                             <option @if ($stage->attestationStatut == "Délivrée")
                                                                 selected
                                                             @endif value="Délivrée">Délivrée</option>
+                                                            <option @if ($stage->attestationStatut == "Stage d'observation")
+                                                                selected
+                                                            @endif value="Stage d'observation">Stage d'observation</option>
+
+
                                                 </select>
                                         </div>
                                         <div>

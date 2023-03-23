@@ -52,6 +52,7 @@
                                                             <option value="A établir">A établir</option>
                                                             <option value="Etablie">Etablie</option>
                                                             <option value="Délivrée">Délivrée</option>
+                                                            <option value="Stage d'observation">Stage d'observation</option>
                                                 </select>
                                         </div>
                                         <div>
