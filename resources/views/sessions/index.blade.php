@@ -108,7 +108,7 @@
                             {{optional($session->theme)->objet}}
                             </td>
                             <td class="transition px-6 py-4">
-                            {{$session->marche->type}} n° {{$session->marche->ref}}
+                            {{optional($session->marche)->type}} n° {{optional($session->marche)->ref}}
                             </td>
 
                             <td class="px-6 py-4">
