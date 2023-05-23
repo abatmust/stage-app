@@ -62,7 +62,7 @@
                             animé par: {{ $session->animateur}}
                         </div>
                         <div class="border-2 border-teal-700 p-1 rounded-md grow text-center font-bold m-2 bg-emerald-900 text-neutral-50">
-                            Marché: {{ $session->marche->ref}} {{ $session->marche->objet}}
+                            Marché: {{ optional($session->marche)->ref}} {{ optional($session->marche)->objet}}
                         </div>
                     </div>
                     <div class="border-2 border-red-700 p-1 rounded-md grow text-center font-bold m-2 bg-red-400 text-neutral-50">
