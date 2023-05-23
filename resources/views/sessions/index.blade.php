@@ -104,7 +104,8 @@
                             {{$session->animateur}}
                             </td>
                             <td class="transition px-6 py-4">
-                            {{$session->theme->objet}}
+                            
+                            {{optional($session->theme)->objet}}
                             </td>
                             <td class="transition px-6 py-4">
                             {{$session->marche->type}} n° {{$session->marche->ref}}
